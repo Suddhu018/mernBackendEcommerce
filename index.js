@@ -123,7 +123,8 @@ const app = express();
 const PORT = 3000;
 const JWT_KEY = "1234567";
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: "https://mern-front-end-ecommerce.vercel.app" }));
+
 ////////////////////////////////////////////MIDDLEWARES///////////////////////////////////////////////
 async function isUserExistSignIn(req, res, next) {
   const user_email = req.headers.email;
