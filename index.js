@@ -123,21 +123,7 @@ const app = express();
 const PORT = 3000;
 const JWT_KEY = "1234567";
 app.use(express.json());
-app.use((req, res, next) => {
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://mern-front-end-ecommerce.vercel.app"
-  );
-  res.header(
-    "Access-Control-Allow-Methods",
-    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
-  );
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
+app.use(cors({ origin: "https://mern-front-end-ecommerce.vercel.app" }));
 
 ////////////////////////////////////////////MIDDLEWARES///////////////////////////////////////////////
 async function isUserExistSignIn(req, res, next) {
