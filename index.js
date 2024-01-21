@@ -3,11 +3,6 @@ const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 const multer = require("multer");
-const fs = require("fs");
-const destinationDirectory = "./public";
-if (!fs.existsSync(destinationDirectory)) {
-  fs.mkdirSync(destinationDirectory);
-}
 const storage = multer.diskStorage({
   //this is for multer
   destination: function (req, file, cb) {
