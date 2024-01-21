@@ -6,7 +6,8 @@ const multer = require("multer");
 const storage = multer.diskStorage({
   //this is for multer
   destination: function (req, file, cb) {
-    return cb(null, "/public");
+    const uploadPath = path.join(__dirname, "public");
+    return cb(null, uploadPath);
   },
   filename: function (req, file, cb) {
     req.image = `${Date.now()}${file.originalname}`;
