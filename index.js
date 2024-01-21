@@ -6,7 +6,7 @@ const multer = require("multer");
 const storage = multer.diskStorage({
   //this is for multer
   destination: function (req, file, cb) {
-    return cb(null, "https://mern-front-end-ecommerce.vercel.app/public");
+    return cb(null, "./public");
   },
   filename: function (req, file, cb) {
     req.image = `${Date.now()}${file.originalname}`;
